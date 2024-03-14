@@ -3,7 +3,7 @@
 name: Weekly Retrospective
 on:
   schedule:
-    - cron: '0 15 * * 6' # UTC 시간으로 토요일 오후 3시(15:00)에 실행, KST로는 일요일 00:00시
+     - cron: '0 15 * * 0' # UTC 시간으로 일요일 오후 3시(15:00)에 실행, KST로는 월요일 00:00시
 # on: [push]
 
 permissions:

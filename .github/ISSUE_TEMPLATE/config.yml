@@ -1,0 +1,21 @@
+# https://docs.github.com/ko/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template-chooser
+
+
+blank_issues_enabled: false  # 비어 있는 이슈 템플릿 사용 비활성화
+
+contact_links:
+  - name: 기타 문의
+    url: https://github.com/hunsoodev
+    about: 주간 회고와 관련되지 않은 문의사항은 여기로 해주세요.
+
+
+issue_types:
+  # 템플릿 1
+  - name: 주간 회고
+    title: Weekly Retrospective {{ date | date('dddd, MMMM Do') }}
+    about: 지난 주의 작업을 회고하고 다음 주의 목표를 설정해주세요.
+    labels: [retrospective, KPT]
+    template: weekly-retro.md
+
+  # 템플릿 2 (추가 템플릿 작성)
+  # ...

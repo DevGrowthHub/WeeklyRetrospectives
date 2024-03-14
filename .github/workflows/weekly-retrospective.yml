@@ -1,0 +1,28 @@
+# https://github.com/JasonEtco/create-an-issue
+
+name: Weekly Retrospective
+on:
+  schedule:
+    - cron: '0 15 * * 6' # UTC 시간으로 토요일 오후 3시(15:00)에 실행, KST로는 일요일 00:00시
+# on: [push]
+
+permissions:
+  contents: read
+  issues: write 
+    
+jobs:
+  create_retro_issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Create Issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.ISSUE_TOKEN }}
+        with: 
+          filename: .github/ISSUE_TEMPLATE/weekly-retro.md
+        id: create-issue
+      - run: 'echo Created issue number ${{ steps.create-issue.outputs.number }}'
+      - run: 'echo Created ${{ steps.create-issue.outputs.url }}'

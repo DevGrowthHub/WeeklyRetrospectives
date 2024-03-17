@@ -18,11 +18,11 @@ jobs:
       - name: Close issues with specific label
         uses: actions/github-script@v5
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.ISSUE_TOKEN}}
           script: |
             const github = require('@actions/github');
             const { owner, repo } = github.context.repo;
-            const label = ['retrospective', 'KPT'];
+            const label = ['KPT', 'retrospective'];
             const state = 'open';
             const issues = await github.rest.issues.listForRepo({
               owner,

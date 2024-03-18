@@ -21,9 +21,8 @@ jobs:
         with:
           github-token: ${{secrets.ISSUE_TOKEN}}
           script: |
-            const github = require('@actions/github');
             const { owner, repo } = github.context.repo;
-            const label = ['KPT', 'retrospective'];
+            const labels = ['KPT', 'retrospective'];
             const state = 'open';
             const issues = await github.rest.issues.listForRepo({
               owner,
@@ -41,4 +40,3 @@ jobs:
                 state: 'closed',
               });
               console.log(`Closed issue number: ${number}`);
-            }

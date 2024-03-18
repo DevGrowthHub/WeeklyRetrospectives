@@ -1,9 +1,10 @@
 # https://github.com/JasonEtco/create-an-issue
+# 주간 회고 : 매주 월요일 open , 일요일 close
 
 name: Weekly Retrospective
 on:
   schedule:
-     - cron: '0 15 * * 0' # UTC 시간으로 일요일 오후 3시(15:00)에 실행, KST로는 월요일 00:00시
+     - cron: 0 1 * * 1 # UTC 시간으로 월요일 오후 1시(13:00)에 실행, KST로는 월요일 오전 10:00
 # on: [push]
 
 permissions:
